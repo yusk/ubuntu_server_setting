@@ -36,18 +36,42 @@ iface wlan0 inet static
 ## 作業ログ
 
 * 2016/10/27
- * 行ったこと
-  * 【問題】PC2, PC3が sudo apt-get update ができない(外部へのアクセスができない)(ping 8.8.4.4 は通る)
-  * 【解決】外部アクセス可能に
-   * dns-nameserver のipが片方死んでいた模様
-   * 生きている方を指定したら無線接続可能に！
-  * 【実行】[CSI Tool インストール方法の日本語訳](https://github.com/yusk/ubuntu_server_setting/blob/master/CSI_Tool_readme.md)の作成
-  * 【実行】[CSI Tool インストールのシェルスクリプト](https://github.com/yusk/ubuntu_server_setting/blob/master/csi_tool_install.sh)の作成
-  * 【実行】PC1に 同じネットワーク設定
-  * 【断念】PC1の無線LAN接続失敗
-  * 【実行】PC3に CSI Tool のインストール
-   * エラーが二箇所
-    * sudo make -C /lib/modules/$(uname -r)/build M=$(pwd)/drivers/net/wireless/iwlwifi INSTALL_MOD_DIR=updates modules_install
+	* 行ったこと
+  		* 【問題】PC2, PC3が sudo apt-get update ができない(外部へのアクセスができない)(ping 8.8.4.4 は通る)
+		* 【解決】外部アクセス可能に
+			* dns-nameserver のipが片方死んでいた模様
+		* 生きている方を指定したら無線接続可能に！
+		* 【実行】[CSI Tool インストール方法の日本語訳](https://github.com/yusk/ubuntu_server_setting/blob/master/CSI_Tool_readme.md)の作成
+		* 【実行】[CSI Tool インストールのシェルスクリプト](https://github.com/yusk/ubuntu_server_setting/blob/master/csi_tool_install.sh)の作成
+		* 【実行】PC1に 同じネットワーク設定
+		* 【断念】PC1の無線LAN接続失敗
+		* 【実行】PC3に CSI Tool のインストール
+			* エラーが二箇所
+				* sudo make -C /lib/modules/$(uname -r)/build M=$(pwd)/drivers/net/wireless/iwlwifi INSTALL_MOD_DIR=updates modules_install
+				* sudo modprobe iwiwifi connector_log=0x1
+				* 以下にエラー内容記述
+			* 気になる点
+				* CSI Tool インストール後、外部との接続ができなくなった
+				* ping 8.8.4.4 通っていた   
+		* 【断念】PC3 の CSI Tool 動かず -> やはりWiFiカードは変えないといけなさそう
+		* 【目標】PC1(Intel 5300 のカードを使っているPC) に無線LANを接続
+		* 【実行】PC1 に ___ubuntu server 14.04.3___ を再インストール
+			* インストールを無線で行えた -> 希望あり？
+		* 【実行】無線の設定
+			* はじめは、ping 8.8.4.4は出来るが、apt-get updateはできず
+			* ネットワーク設定にdns-nameservise を一つに、broadcastを追加、ipを.42 -> .39に
+			* apt-get update 動いた！！！
+		* 【解決】PC1 無線LAN接続成功
+		* 【目標】CSI Toolを動かす
+		* 【実行】インストーラーに従って CSI Tool インストール
+			* error 1 は発生していた。
+			* 無視してインストール続行
+			* 無線LANは繋がらず、アソシエイションもできない状態に
+			* csi.dat のファイルサイズも増えず
+	* 次の予定
+		* CSI Tool をどうにかして動かす
+
+error 1
 
 ```
 make: ディレクトリ `/usr/src/linux-headers-3.19.0-25-generic' に入ります
@@ -61,27 +85,10 @@ Can't read private key
 make: ディレクトリ `/usr/src/linux-headers-3.19.0-25-generic' から出ます
 ```
 
-    * sudo modprobe iwiwifi connector_log=0x1
+error 2
 
 ```
 Firmware size does not match iwlwifi-5000-2.ucode.sigcomm2010. The UW 802.11n CSI Tool will not work.
 ```
 
-   * 気になる点
-    * CSI Tool インストール後、外部との接続ができなくなった
-    * ping 8.8.4.4 通っていた   
-  * 【断念】PC3 の CSI Tool 動かず -> やはりWiFiカードは変えないといけなさそう
-  * 【目標】PC1(Intel 5300 のカードを使っているPC) に無線LANを接続
-  * 【実行】PC1 に ___ubuntu server 14.04.3___ を再インストール
-   * インストールを無線で行えた -> 希望あり？
-  * 無線の設定
-   * はじめは、ping 8.8.4.4は出来るが、apt-get updateはできず
-   	* ネットワーク設定にdns-nameservise を一つに、broadcastを追加、ipを.42 -> .39に
-   * apt-get update 動いた！！！
-  * 【解決】PC1 無線LAN接続成功
-  * 【目標】CSI Toolを動かす
-  * 【実行】インストーラーに従って CSI Tool インストール
-
-
- * 【困難】PC1 の無線接続
 

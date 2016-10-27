@@ -113,6 +113,8 @@ wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 	* ?
 * ping -c 3 172.16.0.3
 	* ?
+* traceroute 8.8.8.8
+	* ?
 
 
 

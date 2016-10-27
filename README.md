@@ -4,10 +4,11 @@
 
 * ディスクをPCに入れる
 * BIOSで起動の優先順位を変える
+	* F2押しながら起動
+	* F10で保存して再起動
+	* 光学ドライブをオンにしておく
 * 再起動
 * インストーラーに従う
-
-↑ うる覚えかつ、自信なし
 
 ## 2. ネットに繋がるようにする(有線)
 
@@ -47,7 +48,7 @@ dns-nameservers 192.168.11.1
 network={
 ssid="my_ssid"
 psk=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-proto=WPA
+proto=RSN
 key_mgmt=WPA-PSK
 pairwise=CCMP
 group=CCMP
@@ -112,3 +113,7 @@ wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 	* ?
 * ping -c 3 172.16.0.3
 	* ?
+
+
+
+

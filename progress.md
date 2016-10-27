@@ -71,6 +71,7 @@ iface wlan0 inet static
 	* 原因
 		 * error 1 ?
 	* 次の予定
+		* PC1 の無線LAN接続
 		* CSI Tool をどうにかして動かす
 
 error 1

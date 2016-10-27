@@ -68,6 +68,8 @@ iface wlan0 inet static
 			* 無視してインストール続行
 			* 無線LANは繋がらず、アソシエイションもできない状態に
 			* csi.dat のファイルサイズも増えず
+	* 原因
+		 * error 1 ?
 	* 次の予定
 		* CSI Tool をどうにかして動かす
 

@@ -94,4 +94,16 @@ error 2
 Firmware size does not match iwlwifi-5000-2.ucode.sigcomm2010. The UW 802.11n CSI Tool will not work.
 ```
 
+* 2016/10/28
+	* 行ったこと
+		* pythonの勉強
+			* ライブラリ関連
+				* numpy
+				* pandas
+				* matplotlib.pyplot
+		* markdown × tex
+			* $で囲むとtex記法が使えるらしい
+			* md -> tex 変換が可能
+				* [Markdown+Texの環境構築と使い方](http://qiita.com/ish_774/items/82cbda064792306a5493)
+			* 原稿書くのに便利かも
 

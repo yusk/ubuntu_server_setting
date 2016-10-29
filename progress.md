@@ -126,11 +126,12 @@ Firmware size does not match iwlwifi-5000-2.ucode.sigcomm2010. The UW 802.11n CS
 				* [net-toolsとiproute2のコマンド対応早見表](https://orebibou.com/2014/12/ip-toolsとiproute2のコマンド対応早見表/)	
 				* [Ubuntu 14.04の不安定なWi-Fi接続を直しました](http://blog.webfun.tech/entry/fix-wifi-error-on-ubntu14)
 				* [ubuntu 14.04 を無線LANアクセスポイントにする](http://blog.be-dama.com/2014/07/23/ubuntu-14-04-を無線lanアクセスポイントにする/)
-			* 【考察】PC1
-				* if wlan0 ができない -> リロードしたドライバに問題が？
+			* 【問題】PC1
+				* ifup wlan0 ができない -> リロードしたドライバに問題が？
 					* 別の方法で設定すべき？
 					* iproutes 使える？
-				* 
+	* 次の予定
+		* iproutes を使ってみる
 
 
 

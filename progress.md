@@ -130,8 +130,13 @@ Firmware size does not match iwlwifi-5000-2.ucode.sigcomm2010. The UW 802.11n CS
 				* ifup wlan0 ができない -> _リロードしたドライバに問題が？_
 					* 別の方法で設定すべき？
 					* iproutes 使える？
+			* 【実行】小林先輩に相談
+				* sudo modprobe -r iwlwifi mac80211で.11のドライバを削除したところで繋がらなくなってるのは確か
+				* CSI Tool の iwlwifi がうまく動いていない
+				* カーネルの指定バージョンが3.2 ~ 3.4なのに対して、PC1は3.19なのが気になる
 	* 次の予定
-		* iproutes を使ってみる
+		* カーネルのバージョンを合わせる
+			* おそらく、新しいCD-ROMを作って、再インストール
 
 PC3
 

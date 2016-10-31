@@ -273,3 +273,18 @@ Faild to bring up wlan0
 
 ```
 
+* 2016/10/31
+	* 行ったこと
+		* 【目標】カーネルのアップデート
+		* 【実行】コマンド調べる
+			* カーネルを含めたアップデート
+				* sudo apt-cache search linux-image-3
+				* sudo apt-get install linux-image-4.2.0-42-generic linux-headers-4.2.0-42
+				* 参考:[UbuntuのKernelアップグレード](https://www.neko6.info/archives/1874)
+				* 参考:[Ubuntuのカーネルをアップデートしたらカーネルパニックが起きた時の解決方法](https://cpplover.blogspot.jp/2015/12/ubuntu.html)
+		* 【実行】カーネルを4.2.0-42にアップデート
+		* 【問題】wlan0消失
+		* 【実行】PC1の ubuntu 再インストール
+		* 【実行】カーネルアップデート
+		* 【問題】やはりwlan0消失
+
